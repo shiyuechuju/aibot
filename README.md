@@ -58,8 +58,15 @@ c. 在  .env  文件中添加以下内容： ```env
   if not BOT_TOKEN or not KIMI_API_KEY:
       logger.critical("错误：TELEGRAM_BOT_TOKEN 或 KIMI_API_KEY 未配置。机器人无法启动。")
       # exit("API密钥缺失") # 或者其他处理方式
-  ```     Use code with caution.  6. 准备报价表 将你的服务器报价数据放入名为  server.txt  的文件中，并确保它与  bot.py  在同一目录下。文件应为 UTF-8 编码。
-报价表的格式应与机器人系统提示（ bot.py  中的  system_prompt ）中 Kimi 被告知的格式一致，以便 AI 能正确解析。 7. 初始化数据库 运行数据库初始化脚本（此脚本会创建  chat_history.db  文件及所需表结构）： python database.py     Use code with caution.Bash  你会看到类似 "数据库 'chat_history.db' 已初始化/检查完毕。" 的输出。 8. 运行机器人 python bot.py     Use code with caution.Bash  如果一切配置正确，机器人应该会启动并开始轮询 Telegram 更新。你会在控制台看到类似 "机器人正在启动..." 的日志。 如何与机器人交互 1.  在 Telegram 中找到你的机器人。  2.  发送  /start  命令查看欢迎信息和使用示例。  3.  开始向机器人咨询服务器配置，例如： ◦  "你好，我想找个香港的服务器"  ◦  "CPU E3 的有吗？"  ◦  "内存需要16G"  ◦  "硬盘1TB，带宽20M CN2线路"  ◦  "这款服务器支持安装 Windows Server 2012 吗？"  ◦  "这个配置价格多少？"  ◦  "好的，我买这个了，来一台。"    4.  如果机器人成功识别购买意图并确认配置，它会提供支付信息。   注意事项 •  API 密钥安全：绝对不要将你的真实 API 密钥直接提交到公共 GitHub 仓库中。 强烈建议使用  .env  文件配合  .gitignore  来管理敏感信息，或者使用服务器端环境变量。  •  Kimi API 的遵循度：机器人的回复质量和流程执行的准确性高度依赖于 Kimi AI 对系统提示的理解和遵循。你可能需要根据实际测试结果调整  bot.py  中的  system_prompt 。  •  Token 限制：报价表  server.txt  的内容会被包含在发送给 Kimi 的每次请求中。如果报价表非常大，可能会超出 Kimi 模型的上下文窗口限制（如  moonshot-v1-8k  约8000 tokens）。对于非常大的数据集，可能需要考虑更高级的 RAG (Retrieval Augmented Generation) 方案。  •  日志：请关注运行  bot.py  时控制台输出的日志，它们对于调试问题非常重要。   贡献 欢迎提交 Pull Requests 或报告 Issues。 许可证 MIT (如果选择MIT许可证，请创建一个 LICENSE 文件并放入MIT许可证文本) **在 `README.md` 中还需要注意：**
+  ```     Use code with caution.
+6. 准备报价表 将你的服务器报价数据放入名为  server.txt  的文件中，并确保它与  bot.py  在同一目录下。文件应为 UTF-8 编码。
+报价表的格式应与机器人系统提示（ bot.py  中的  system_prompt ）中 Kimi 被告知的格式一致，以便 AI 能正确解析。
+7. 初始化数据库 运行数据库初始化脚本（此脚本会创建  chat_history.db  文件及所需表结构）： python database.py     Use code with caution.Bash  你会看到类似 "数据库 'chat_history.db' 已初始化/检查完毕。" 的输出。
+8. 运行机器人 python bot.py     Use code with caution.Bash  如果一切配置正确，机器人应该会启动并开始轮询 Telegram 更新。你会在控制台看到类似 "机器人正在启动..." 的日志。 如何与机器人交互
+1.  在 Telegram 中找到你的机器人。
+2.  发送  /start  命令查看欢迎信息和使用示例。
+ 3.  开始向机器人咨询服务器配置，例如： ◦  "你好，我想找个香港的服务器"  ◦  "CPU E3 的有吗？"  ◦  "内存需要16G"  ◦  "硬盘1TB，带宽20M CN2线路"  ◦  "这款服务器支持安装 Windows Server 2012 吗？"  ◦  "这个配置价格多少？"  ◦  "好的，我买这个了，来一台。"
+ 4.  如果机器人成功识别购买意图并确认配置，它会提供支付信息。   注意事项 •  API 密钥安全：绝对不要将你的真实 API 密钥直接提交到公共 GitHub 仓库中。 强烈建议使用  .env  文件配合  .gitignore  来管理敏感信息，或者使用服务器端环境变量。  •  Kimi API 的遵循度：机器人的回复质量和流程执行的准确性高度依赖于 Kimi AI 对系统提示的理解和遵循。你可能需要根据实际测试结果调整  bot.py  中的  system_prompt 。  •  Token 限制：报价表  server.txt  的内容会被包含在发送给 Kimi 的每次请求中。如果报价表非常大，可能会超出 Kimi 模型的上下文窗口限制（如  moonshot-v1-8k  约8000 tokens）。对于非常大的数据集，可能需要考虑更高级的 RAG (Retrieval Augmented Generation) 方案。  •  日志：请关注运行  bot.py  时控制台输出的日志，它们对于调试问题非常重要。   贡献 欢迎提交 Pull Requests 或报告 Issues。 许可证 MIT (如果选择MIT许可证，请创建一个 LICENSE 文件并放入MIT许可证文本) **在 `README.md` 中还需要注意：**
 
 *   **`<your-repository-url>`**：记得替换成你实际的 GitHub 仓库 URL。
 *   **`.env.example` 文件**：如果你选择使用 `.env` 文件的方式管理密钥，最好在仓库中提供一个 `.env.example` 文件，内容如下：
@@ -85,4 +92,6 @@ c. 在  .env  文件中添加以下内容： ```env
     ```
 *   **`LICENSE` 文件**：如果你想为项目添加一个开源许可证（如 MIT），你需要创建一个名为 `LICENSE` 的文件，并将许可证的文本内容粘贴进去。例如，MIT 许可证文本可以从 [choosealicense.com](https://choosealicense.com/licenses/mit/) 获取。
 
-将这两个文件 (`requirements.txt` 和 `README.md`) 放在你的项目根目录下（与 `bot.py` 和 `database.py` 同级），然后你就可以将整个项目提交到 GitHub 了。
+
+*   **`代码交流群`**： https://t.me/fwqjlq
+作者： @kdnick
