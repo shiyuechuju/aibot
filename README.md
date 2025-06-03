@@ -92,6 +92,6 @@ c. 在  .env  文件中添加以下内容： ```env
     ```
 *   **`LICENSE` 文件**：如果你想为项目添加一个开源许可证（如 MIT），你需要创建一个名为 `LICENSE` 的文件，并将许可证的文本内容粘贴进去。例如，MIT 许可证文本可以从 [choosealicense.com](https://choosealicense.com/licenses/mit/) 获取。
 
-
+## 代码交流群
 *   **`代码交流群`**： https://t.me/fwqjlq
 作者： @kdnick
