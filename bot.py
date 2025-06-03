@@ -11,15 +11,15 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import database
 
 # --- 配置 ---
-BOT_TOKEN = "7910233578:AAH_OelLKgZ-B0pHnChVVPBZ_9WnyJraLmQ"
-KIMI_API_KEY = "sk-mnZvTUApggdZSN8GUm2eGrzl5z3lqGezqmNYwWh8ot0UFSpR"
+BOT_TOKEN = "79102335*lLKgZ-B0pHnChVVPBZ_9WnyJraLmQ"
+KIMI_API_KEY = "sk-mnZvTUApggdZ*z3lqGezqmNYwWh8ot0UFSpR"
 KIMI_MODEL = "moonshot-v1-8k" # 或者更长的上下文模型如 moonshot-v1-32k，如果报价表很大
 KIMI_CHAT_API_URL = "https://api.moonshot.cn/v1/chat/completions"
 
 # --- 新增业务逻辑配置 ---
 SERVER_DATA_FILE = "server.txt"  # 报价表文件名
 SERVER_DATA_CONTENT = ""         # 用于存储 server.txt 内容
-PAYMENT_INFO_TEXT = "TELW5kSV8eMXfwrVKYMHLdtjc266666666"  # 收款码文本
+PAYMENT_INFO_TEXT = "TELW5kSV8eMXfwrVKYM*"  # 收款码文本
 CUSTOMER_SERVICE_CONTACT = "@datingkefu"  # 客服联系方式
 # Kimi需要输出这个精确的字符串（包括换行符，如果设计如此）来触发后续动作
 TRIGGER_PURCHASE_PHRASE = "[USER_CONFIRMED_PURCHASE_SEND_PAYMENT_DETAILS]"
