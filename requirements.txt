@@ -1,0 +1,4 @@
+python-telegram-bot>=20.0  # 确保版本至少为 20.0，因为 ParseMode 的位置变了
+httpx>=0.20.0             # 用于HTTP请求
+# python-dotenv             # 如果你使用了 .env 文件管理敏感信息 (可选但推荐)
+# moonshot-sdk            # 如果你之前版本使用了这个SDK，但当前HTTP版本不需要
