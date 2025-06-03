@@ -33,6 +33,11 @@
 *   一个 Telegram Bot Token (从 @BotFather 获取)。
 *   一个 Kimi AI API Key (从 Moonshot AI 官网获取)。
 
+
+### 代码交流群： https://t.me/fwqjlq
+ 
+### 作者： @kdnick
+
 ### 2. 克隆仓库 (或下载文件)
 
 ```bash
@@ -92,6 +97,9 @@ c. 在  .env  文件中添加以下内容： ```env
     ```
 *   **`LICENSE` 文件**：如果你想为项目添加一个开源许可证（如 MIT），你需要创建一个名为 `LICENSE` 的文件，并将许可证的文本内容粘贴进去。例如，MIT 许可证文本可以从 [choosealicense.com](https://choosealicense.com/licenses/mit/) 获取。
 
-# 代码交流群： https://t.me/fwqjlq
- 
-#作者： @kdnick
+
+
+
+
+
+
